@@ -31,7 +31,7 @@ The aws-cli package works on Python versions:
 Step 2: Install aws-cli
 -----------------------
 
-The easiest way to install aws-cli is to use `pip`_::
+The easiest way to install ``aws-cli`` is to use ``pip``::
 
     $ pip install awscli
 
@@ -39,31 +39,25 @@ or, if you are not installing in a ``virtualenv``::
 
     $ sudo pip install awscli
 
-If you have the aws-cli installed and want to upgrade to the latest version
+If you have the ``aws-cli`` installed and want to upgrade to the latest version
 you can run::
 
     $ pip install --upgrade awscli
 
-This will install the aws-cli package as well as all dependencies.  You can
-also just `download the tarball`_.  Once you have the
-awscli directory structure on your workstation, you can just run::
-
-    $ cd <path_to_awscli>
-    $ python setup.py install
 
 -----------------------
 Step 3: Run the script
 -----------------------
 
-MUST EDIT aws-ec2-script-template.json with details specific to your AWS account and configuration. Be sure to remove all comments from JSON file before running. 
+**MUST EDIT aws-ec2-script-template.json** with details specific to your AWS account and configuration. Be sure to remove all comments from JSON file before running. 
 
-From the local directory where your aws-ec2-script-template.json file is stored, execute the following::
+From the local directory where your ``aws-ec2-script-template.json`` file is stored, execute the following::
 
     $ aws ec2 request-spot-instances --spot-price "0.02" --launch-specification file://ec2-run-script-template.json
 
 **The command above will request a spot instance with price set at $0.02/hr.**
 
-"*To launch a regular instance rather than 'spot instance', execute the following*"::
+"*To launch a regular instance rather than spot instance, execute the following*"::
 
     $ aws ec2 run-instances --launch-specification file://ec2-run-script-template.json
 
