@@ -1,3 +1,4 @@
+//Remove comments before running the script, comments not allowed in JSON
 {
 //AWS Image Id for public or private machine image
     "ImageId": "ami-63b25203", 

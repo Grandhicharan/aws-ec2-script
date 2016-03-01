@@ -61,8 +61,7 @@ From the local directory where your aws-ec2-script-template.json file is stored,
 
     $ aws ec2 request-spot-instances --spot-price "0.02" --launch-specification file://ec2-run-script-template.json
 
-This will request a spot instance with price of $0.02/hr. To request 
-
+**The command above will request a spot instance with price set at $0.02/hr.
 **To launch a regular instance rather than 'spot instance', execute the following::
 
     $ aws ec2 run-instances --launch-specification file://ec2-run-script-template.json
@@ -70,4 +69,5 @@ This will request a spot instance with price of $0.02/hr. To request
 ----------------------------------------------
 Additional configuration options and commands
 ----------------------------------------------
+Please see::
 https://docs.aws.amazon.com/cli/latest/reference/ec2/
