@@ -1,10 +1,11 @@
-# aws-ec2-script template
-Use aws-ec2-script-template.json script for launching ec2 instances with AWS CLI tools
+==========================================================
+JSON script for launching ec2 instances with AWS CLI tools
+==========================================================
+*requires Python and aws-cli
 
-#Step 1: Download aws-cli package
-=======
-aws-cli
-=======
+--------------------------------
+Step 1: Download aws-cli package
+--------------------------------
 
 .. image:: https://travis-ci.org/aws/aws-cli.png?branch=develop
    :target: https://travis-ci.org/aws/aws-cli
@@ -26,9 +27,9 @@ The aws-cli package works on Python versions:
 * 3.5.x and greater
 
 
-------------
-Step 2: Install awscli
-------------
+-----------------------
+Step 2: Install aws-cli
+-----------------------
 
 The easiest way to install aws-cli is to use `pip`_::
 
