@@ -1,6 +1,6 @@
-==========================================================
-JSON script for launching ec2 instances with AWS CLI tools
-==========================================================
+===================================
+JSON script to launch ec2 instances
+===================================
 *requires Python and aws-cli
 
 --------------------------------
@@ -57,20 +57,17 @@ Step 3: Run the script
 
 MUST EDIT aws-ec2-script-template.json with details specific to your AWS account and configuration. Be sure to remove all comments from JSON file before running. 
 
-From the local directory where your aws-ec2-script-template.json file is stored, execute the following: 
+From the local directory where your aws-ec2-script-template.json file is stored, execute the following::
 
     $ aws ec2 request-spot-instances --spot-price "0.02" --launch-specification file://ec2-run-script-template.json
+
 This will request a spot instance with price of $0.02/hr. To request 
 
-**To launch a regular instance rather than 'spot instance', execute the following
+**To launch a regular instance rather than 'spot instance', execute the following::
 
     $ aws ec2 run-instances --launch-specification file://ec2-run-script-template.json
 
 ----------------------------------------------
 Additional configuration options and commands
 ----------------------------------------------
-
-   :target: https://docs.aws.amazon.com/cli/latest/reference/ec2/
-   :alt: ec2 CLI commands
-
-
+https://docs.aws.amazon.com/cli/latest/reference/ec2/
