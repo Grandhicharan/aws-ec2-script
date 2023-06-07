@@ -1,51 +1,23 @@
-//Remove comments before running the script, comments not allowed in JSON
 {
-//AWS Image Id for public or private machine image
-    "ImageId": "ami-01107263728f3bef4", 
-//Key pair to log in to the instance securely
-    "KeyName": "jenkins", 
-
-//AWS instance type (list and current pricing: http://www.ec2instances.info/)
-    "InstanceType": "t2.micro", 
-    "Placement": {
-    //AWS region where instance will be created 
-        "AvailabilityZone": "us-east-2a"
-    }, 
-    "BlockDeviceMappings": [
-        { 
-            //Storage drive location, size in GB, type (gp2, io1, or standard), and encryption 
-            "DeviceName": "/dev/sda1", 
-            "Ebs": {
-                "VolumeSize": 30, 
-                "DeleteOnTermination": true, 
-                "VolumeType": "gp2", 
-                "Encrypted": true
-            }, 
-            "NoDevice": ""
+  "ImageId": "ami-024e6efaf93d85776",
+  "InstanceType": "t2.micro",
+  "MinCount": 1,
+  "MaxCount": 1,
+  "KeyName": "jenkins",
+  "SecurityGroupIds": [
+    "sg-02957c9cb0f396e70"
+  ],
+  "SubnetId": "subnet-0b1b89464e11ea0f9",
+  "UserData": "IyEvYmluL3NoCg==",
+  "TagSpecifications": [
+    {
+      "ResourceType": "instance",
+      "Tags": [
+        {
+          "Key": "Name",
+          "Value": "MyEC2Instance"
         }
-    ], 
-    "Monitoring": {
-        //To enable CloudWatch monitoring, pricing here: https://aws.amazon.com/cloudwatch/pricing/
-        "Enabled": false
-    }, 
-    "NetworkInterfaces": [
-        { 
-            //AWS SubnetId, Private IP if you want to specify, Security Group ID
-            "DeviceIndex": 0, 
-            "SubnetId": "subnet-00000000", 
-            "Description": "eth0", 
-            "PrivateIpAddress": "10.0.1.X", 
-            "Groups": [
-                "sg-e0000000"
-            ], 
-            //Delete network interface on termination and auto-associate Elastic Public IP address
-            "DeleteOnTermination": true, 
-            "AssociatePublicIpAddress": true
-        }
-    ], 
-    "IamInstanceProfile": { 
-        #Specify your preferred Identity & Access Management (IAM) role
-        "Name": "xyz-role"
-    }, 
-    "EbsOptimized": true
+      ]
+    }
+  ]
 }
